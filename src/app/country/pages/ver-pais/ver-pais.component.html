@@ -1,0 +1,37 @@
+<ng-container *ngIf="!country; else divCountry">
+    <span class="alert-info strong">Cargando infomarcion</span>
+</ng-container>
+
+
+<div>
+    <ng-template  #divCountry animate__fadeIn>
+
+        <div>
+            <h1><strong>Pais: </strong>{{country.name}}</h1> 
+        </div>
+        
+        <div class="row">
+
+            <div class="col-4">
+                <h3>Bandera</h3>
+                <img [src]="country.flag" class="img-thumbnail" alt="">
+            </div>
+
+            <div class="col-6">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <strong>Poblacion:</strong> {{country.population | number}}
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Codigo Numerico:</strong> {{country.numericCode | number}}
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Codigo Alpha3:</strong> {{country.alpha3Code }}
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </ng-template>
+</div>
